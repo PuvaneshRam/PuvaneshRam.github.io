@@ -6,6 +6,13 @@ function safeUrl(url) {
   return /^(https?:|mailto:)/i.test(u) || !/^[a-z][a-z0-9+.-]*:/i.test(u) ? esc(u) : '#';
 }
 
+// video-site links stored in a post's media list; src is the provider's video ID
+const VIDEO_EMBEDS = {
+  youtube: { label: 'YOUTUBE', url: (id) => `https://www.youtube-nocookie.com/embed/${id}?rel=0` },
+  vimeo: { label: 'VIMEO', url: (id) => `https://player.vimeo.com/video/${id}` },
+  gdrive: { label: 'DRIVE', url: (id) => `https://drive.google.com/file/d/${id}/preview` }
+};
+
 function allCards() {
   return [...PERSONAL_WORK, ...PROJECT_ITEMS];
 }
@@ -21,6 +28,7 @@ function renderGrid(gridId, items) {
   grid.innerHTML = items.map((p, i) => {
     const artClass = `art-${(i % 3) + 1}`;
     const video = p.media.find((m) => m.type === 'video');
+    const hasVideo = p.media.some((m) => m.type === 'video' || m.type in VIDEO_EMBEDS);
     const has3d = p.media.some((m) => m.type === '3d');
     return `
       <article class="card" tabindex="0" data-slug="${esc(p.slug)}">
@@ -32,7 +40,7 @@ function renderGrid(gridId, items) {
           </div>
           <div class="holo-sheen"></div>
           <div class="card-badges">
-            ${video ? '<span class="badge badge-video">VIDEO</span>' : ''}
+            ${hasVideo ? '<span class="badge badge-video">VIDEO</span>' : ''}
             ${has3d ? '<span class="badge badge-3d">3D</span>' : ''}
           </div>
           <div class="card-info">
@@ -93,14 +101,19 @@ let detailReturnScreen = 'menu';
 // the grid tile preview — a cheap, non-interactive stand-in for each media type,
 // clicking it opens the real thing (full video, full 3D embed, full-size image) in the lightbox
 function tileHTML(item, alt) {
+  const id = esc(encodeURIComponent(item.src));
   if (item.type === 'video') return `<video src="${safeUrl(item.src)}" muted preload="metadata" playsinline></video><span class="tile-badge">▶ VIDEO</span>`;
+  if (item.type === 'youtube') return `<img src="https://i.ytimg.com/vi/${id}/mqdefault.jpg" alt="${esc(alt)}" loading="lazy"><span class="tile-badge">▶ YOUTUBE</span>`;
+  if (item.type in VIDEO_EMBEDS) return `<div class="tile-3d"><span class="placeholder-label">VIDEO<br>CLICK TO PLAY</span></div><span class="tile-badge">▶ ${VIDEO_EMBEDS[item.type].label}</span>`;
   if (item.type === '3d') return `<div class="tile-3d"><span class="placeholder-label">3D MODEL<br>CLICK TO VIEW</span></div>`;
   return `<span class="placeholder-label">DROP RENDER<br>HERE</span><img src="${safeUrl(item.src)}" alt="${esc(alt)}" loading="lazy">`;
 }
 
 function lightboxItemHTML(item, alt) {
+  const id = esc(encodeURIComponent(item.src));
   if (item.type === 'video') return `<video src="${safeUrl(item.src)}" controls autoplay playsinline></video>`;
-  if (item.type === '3d') return `<iframe src="https://sketchfab.com/models/${esc(encodeURIComponent(item.src))}/embed" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe>`;
+  if (item.type in VIDEO_EMBEDS) return `<iframe src="${VIDEO_EMBEDS[item.type].url(id)}" allow="autoplay; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+  if (item.type === '3d') return `<iframe src="https://sketchfab.com/models/${id}/embed" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe>`;
   return `<img src="${safeUrl(item.src)}" alt="${esc(alt)}" loading="lazy">`;
 }
 
