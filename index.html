@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; frame-src https://sketchfab.com; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Puvanesh Ram — 3D Artist & Creative Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="screen screen-boot active" data-screen="boot" id="boot-screen">
+  <div class="title-echo" aria-hidden="true">PORTFOLIO</div>
+  <div class="boot-slash" aria-hidden="true"></div>
+  <div class="boot-content">
+    <span class="sparkle sparkle-a twinkle" aria-hidden="true"></span>
+    <span class="sparkle sparkle-b pink" aria-hidden="true"></span>
+    <span class="sparkle sparkle-c small twinkle" aria-hidden="true"></span>
+    <p class="hero-kicker">PORTFOLIO ✦ 2026</p>
+    <h1 class="hero-title" id="boot-title">PUVANESH<br><span class="title-accent">RAM</span></h1>
+    <p class="boot-prompt">CLICK ANYWHERE TO ENTER</p>
+  </div>
+</div>
+
+<div class="screen screen-menu" data-screen="menu">
+  <div class="title-echo" aria-hidden="true">PORTFOLIO</div>
+
+  <div class="menu-layout">
+    <header class="menu-top">
+      <div class="menu-head">
+        <span class="sparkle sparkle-a twinkle" aria-hidden="true"></span>
+        <span class="sparkle sparkle-b pink" aria-hidden="true"></span>
+        <p class="hero-kicker">CREATIVE PROFILE ✦ 2026</p>
+        <h1 class="hero-title">PUVANESH<br><span class="title-accent">RAM</span></h1>
+        <div class="tag-row">
+          <span class="tag-chip">3D ARTIST</span>
+          <span class="tag-chip">UNITY / UNREAL</span>
+          <span class="tag-chip">WEB DESIGN</span>
+        </div>
+      </div>
+      <div class="year-badge" aria-hidden="true">
+        <span class="year-label">PORTFOLIO</span>
+        <span class="year-digits"><b>20</b><b class="outline">26</b></span>
+      </div>
+    </header>
+
+    <nav class="menu-list" aria-label="Main menu">
+      <button class="menu-item" data-target="work"><span class="mi-num">01</span><span class="mi-label">PERSONAL WORK</span></button>
+      <button class="menu-item" data-target="unity"><span class="mi-num">02</span><span class="mi-label">PROJECTS</span></button>
+      <button class="menu-item" data-target="about"><span class="mi-num">03</span><span class="mi-label">ABOUT</span></button>
+      <button class="menu-item" data-target="contact"><span class="mi-num">04</span><span class="mi-label">CONTACT</span></button>
+    </nav>
+
+    <footer class="menu-bottom">
+      <span class="stamp"><b>PR</b><small>PUVANESH RAM<br>EST. 2026</small></span>
+      <div class="sparkle-line" aria-hidden="true"><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i></div>
+      <div class="menu-links">
+        <a href="https://puvaneshramr1.artstation.com/" target="_blank" rel="noopener">ArtStation</a>
+        <a href="https://www.linkedin.com/in/puvanesh-ram-r-3493a3314/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<div class="screen screen-work" data-screen="work">
+  <button class="back-btn" data-back>‹ BACK</button>
+  <div class="screen-inner">
+    <div class="section-head">
+      <p class="section-kicker">FEATURED</p>
+      <h2 class="section-title">PERSONAL WORK</h2>
+    </div>
+
+    <div class="card-grid" id="work-grid"></div>
+
+    <div class="section-cta">
+      <a class="btn btn-outline" href="https://puvaneshramr1.artstation.com/" target="_blank" rel="noopener">VIEW FULL GALLERY ON ARTSTATION ↗</a>
+    </div>
+  </div>
+</div>
+
+<div class="screen screen-unity" data-screen="unity">
+  <button class="back-btn" data-back>‹ BACK</button>
+  <div class="screen-inner">
+    <div class="section-head">
+      <p class="section-kicker">INTERACTIVE</p>
+      <h2 class="section-title">PROJECTS</h2>
+    </div>
+
+    <div class="card-grid" id="projects-grid"></div>
+  </div>
+</div>
+
+<div class="screen screen-about" data-screen="about">
+  <button class="back-btn" data-back>‹ BACK</button>
+  <div class="screen-inner">
+    <div class="section-head">
+      <p class="section-kicker">WHO I AM</p>
+      <h2 class="section-title">ABOUT</h2>
+    </div>
+    <div class="about-layout" id="about-content"></div>
+  </div>
+</div>
+
+<div class="screen screen-contact" data-screen="contact">
+  <button class="back-btn" data-back>‹ BACK</button>
+  <div class="screen-inner" id="contact-content"></div>
+</div>
+
+<div class="screen screen-detail" data-screen="detail">
+  <button class="back-btn" id="detail-back">‹ BACK</button>
+  <div class="screen-inner">
+    <header class="detail-header" id="detail-header"></header>
+    <div class="detail-grid" id="detail-grid"></div>
+  </div>
+
+  <div class="detail-lightbox" id="detail-lightbox" hidden>
+    <div class="lightbox-backdrop" data-lightbox-close></div>
+    <button class="lightbox-close" data-lightbox-close aria-label="Close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" data-lightbox-prev aria-label="Previous image">‹</button>
+    <div class="lightbox-stage" id="lightbox-stage"></div>
+    <button class="lightbox-nav lightbox-next" data-lightbox-next aria-label="Next image">›</button>
+    <div class="lightbox-counter" id="lightbox-counter"></div>
+  </div>
+</div>
+
+<div class="ticker ticker-top" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-group">
+      <span>PUVANESH RAM</span><i>✦✦✦</i>
+      <span>PORTFOLIO 2026</span><i>✦✦✦</i>
+      <span>3D ARTIST</span><i>✦✦✦</i>
+      <span>PUVANESH RAM</span><i>✦✦✦</i>
+      <span>PORTFOLIO 2026</span><i>✦✦✦</i>
+      <span>3D ARTIST</span><i>✦✦✦</i>
+    </span>
+  </div>
+</div>
+
+<div class="ticker ticker-bottom" aria-hidden="true">
+  <div class="ticker-track reverse">
+    <span class="ticker-group">
+      <i>✦✦✦</i><span>PERSONAL WORK</span>
+      <i>✦✦✦</i><span>PROJECTS</span>
+      <i>✦✦✦</i><span>WEB DESIGN</span>
+      <i>✦✦✦</i><span>PERSONAL WORK</span>
+      <i>✦✦✦</i><span>PROJECTS</span>
+      <i>✦✦✦</i><span>WEB DESIGN</span>
+    </span>
+  </div>
+</div>
+
+<div class="fx-star" id="fx-star" aria-hidden="true"></div>
+<div class="fx-flash" id="fx-flash" aria-hidden="true"></div>
+<div class="fx-particles" id="fx-particles" aria-hidden="true"></div>
+
+<script src="js/projects.js"></script>
+<script src="js/profile.js"></script>
+<script src="js/main.js"></script>
+<script src="js/effects.js"></script>
+</body>
+</html>

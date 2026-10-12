@@ -1,0 +1,8 @@
+# Readable admin code: it only belongs in the site as the encrypted js/admin.vault.js.
+# The editable source lives in ../admin-src and must never reach the public repo.
+js/admin.js
+
+# OS / editor clutter
+Thumbs.db
+desktop.ini
+.DS_Store

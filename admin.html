@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- blob: lets the password-decrypted admin app run; nothing else outside this site may load -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' blob:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; media-src 'self' blob:; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<title>Portfolio Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="locked">
+
+<div class="adm-lock" id="adm-lock" hidden></div>
+<div class="adm-lock-notice" id="adm-lock-notice" role="status" hidden></div>
+
+<header class="adm-top">
+  <a class="adm-logo" href="index.html" target="_blank" rel="noopener"><b>PR</b>ADMIN</a>
+  <div class="adm-status" id="adm-status"></div>
+  <div class="adm-top-actions">
+    <span class="adm-dirty" id="adm-dirty" hidden>Unsaved changes</span>
+    <a class="adm-btn ghost" href="index.html" target="_blank" rel="noopener">View site ↗</a>
+    <button class="adm-btn ghost" id="adm-password" type="button">Password</button>
+    <button class="adm-btn ghost" id="adm-lock-btn" type="button">Lock</button>
+    <button class="adm-btn primary" id="adm-save" type="button">Save</button>
+  </div>
+</header>
+
+<div class="adm-shell">
+  <nav class="adm-nav" id="adm-nav" aria-label="Sections">
+    <p class="adm-nav-label">Posts</p>
+    <button type="button" data-tab="work">Personal Work <span data-count="work"></span></button>
+    <button type="button" data-tab="projects">Projects <span data-count="projects"></span></button>
+    <p class="adm-nav-label">About me</p>
+    <button type="button" data-tab="profile">Profile</button>
+    <button type="button" data-tab="cv">CV</button>
+  </nav>
+  <main class="adm-main" id="adm-main"></main>
+</div>
+
+<div class="adm-drawer" id="adm-drawer" hidden></div>
+<div class="adm-toast" id="adm-toast" role="status" hidden></div>
+
+<script src="js/projects.js"></script>
+<script src="js/profile.js"></script>
+<!-- the admin app itself only loads after the password decrypts it (js/admin-lock.js) -->
+<script src="js/admin.vault.js"></script>
+<script src="js/admin-lock.js"></script>
+</body>
+</html>
