@@ -442,6 +442,86 @@ const PERSONAL_WORK = [
 // Projects screen
 const PROJECT_ITEMS = [
   {
+    "slug": "interior-design-02",
+    "title": "Interior Design 02",
+    "category": "Interior Render",
+    "cover": "assets/projects/interior-design-02/interior-design-02-01.webp",
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/projects/interior-design-02/interior-design-02-01.webp"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/interior-design-02/interior-design-02-02.webp"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/interior-design-02/interior-design-02-03.webp"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/interior-design-02/interior-design-02-04.webp"
+      }
+    ],
+    "artstationUrl": "https://puvaneshramr1.artstation.com/"
+  },
+  {
+    "slug": "interior-design",
+    "title": "Interior Design",
+    "category": "Interior Render / Blender",
+    "description": "Interior Render For my Freelance project. I hope you people like it.",
+    "software": [
+      "Blender"
+    ],
+    "postedDate": "Posted 11 months ago",
+    "stats": {
+      "reactions": 3,
+      "views": 23,
+      "comments": 0
+    },
+    "cover": "assets/projects/interior-design/cover.webp",
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/projects/interior-design/cover.webp"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/interior-design/gallery-1.webp"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/interior-design/gallery-2.webp"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/interior-design/gallery-3.webp"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/interior-design/gallery-4.webp"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/interior-design/gallery-5.webp"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/interior-design/gallery-6.webp"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/interior-design/gallery-7.webp"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/interior-design/gallery-8.webp"
+      }
+    ],
+    "artstationUrl": "https://puvaneshramr1.artstation.com/"
+  },
+  {
     "slug": "cit-website-redesign",
     "title": "CIT Website – UI & UX Redesign",
     "category": "Web Design / UI & UX",
@@ -668,86 +748,6 @@ const PROJECT_ITEMS = [
       {
         "type": "image",
         "src": "assets/projects/ashok-leyland-sci-fi-showroom/ashok-leyland-sci-fi-showroom-16.webp"
-      }
-    ],
-    "artstationUrl": "https://puvaneshramr1.artstation.com/"
-  },
-  {
-    "slug": "interior-design",
-    "title": "Interior Design",
-    "category": "Interior Render / Blender",
-    "description": "Interior Render For my Freelance project. I hope you people like it.",
-    "software": [
-      "Blender"
-    ],
-    "postedDate": "Posted 11 months ago",
-    "stats": {
-      "reactions": 3,
-      "views": 23,
-      "comments": 0
-    },
-    "cover": "assets/projects/interior-design/cover.webp",
-    "media": [
-      {
-        "type": "image",
-        "src": "assets/projects/interior-design/cover.webp"
-      },
-      {
-        "type": "image",
-        "src": "assets/projects/interior-design/gallery-1.webp"
-      },
-      {
-        "type": "image",
-        "src": "assets/projects/interior-design/gallery-2.webp"
-      },
-      {
-        "type": "image",
-        "src": "assets/projects/interior-design/gallery-3.webp"
-      },
-      {
-        "type": "image",
-        "src": "assets/projects/interior-design/gallery-4.webp"
-      },
-      {
-        "type": "image",
-        "src": "assets/projects/interior-design/gallery-5.webp"
-      },
-      {
-        "type": "image",
-        "src": "assets/projects/interior-design/gallery-6.webp"
-      },
-      {
-        "type": "image",
-        "src": "assets/projects/interior-design/gallery-7.webp"
-      },
-      {
-        "type": "image",
-        "src": "assets/projects/interior-design/gallery-8.webp"
-      }
-    ],
-    "artstationUrl": "https://puvaneshramr1.artstation.com/"
-  },
-  {
-    "slug": "interior-design-02",
-    "title": "Interior Design 02",
-    "category": "Interior Render",
-    "cover": "assets/projects/interior-design-02/interior-design-02-01.webp",
-    "media": [
-      {
-        "type": "image",
-        "src": "assets/projects/interior-design-02/interior-design-02-01.webp"
-      },
-      {
-        "type": "image",
-        "src": "assets/projects/interior-design-02/interior-design-02-02.webp"
-      },
-      {
-        "type": "image",
-        "src": "assets/projects/interior-design-02/interior-design-02-03.webp"
-      },
-      {
-        "type": "image",
-        "src": "assets/projects/interior-design-02/interior-design-02-04.webp"
       }
     ],
     "artstationUrl": "https://puvaneshramr1.artstation.com/"
