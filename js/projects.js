@@ -497,31 +497,6 @@ const PROJECT_ITEMS = [
     "artstationUrl": "https://puvaneshramr1.artstation.com/"
   },
   {
-    "slug": "cit-website-redesign",
-    "title": "CIT Website – UI & UX Redesign",
-    "category": "Web Design / UI & UX",
-    "description": "I redesigned the Chennai Institute of Technology (CIT) website with a fresh, modern look that reflects its vision for national and international growth. Alongside the website, I worked on building a new CMS system, handling the entire frontend and most of the backend, while independently developing the CMS with guidance from senior team members.",
-    "software": [
-      "Strapi"
-    ],
-    "cover": "assets/projects/cit-website-redesign/thumbnail.webp",
-    "media": [
-      {
-        "type": "image",
-        "src": "assets/projects/cit-website-redesign/cit-website-redesign-02.webp"
-      },
-      {
-        "type": "image",
-        "src": "assets/projects/cit-website-redesign/cit-website-redesign-03.webp"
-      },
-      {
-        "type": "image",
-        "src": "assets/projects/cit-website-redesign/cit-website-redesign-04.webp"
-      }
-    ],
-    "artstationUrl": "https://puvaneshramr1.artstation.com/"
-  },
-  {
     "slug": "interior-design-02",
     "title": "Interior Design 02",
     "category": "Interior Render",
@@ -542,6 +517,31 @@ const PROJECT_ITEMS = [
       {
         "type": "image",
         "src": "assets/projects/interior-design-02/interior-design-02-04.webp"
+      }
+    ],
+    "artstationUrl": "https://puvaneshramr1.artstation.com/"
+  },
+  {
+    "slug": "cit-website-redesign",
+    "title": "CIT Website – UI & UX Redesign",
+    "category": "Web Design / UI & UX",
+    "description": "I redesigned the Chennai Institute of Technology (CIT) website with a fresh, modern look that reflects its vision for national and international growth. Alongside the website, I worked on building a new CMS system, handling the entire frontend and most of the backend, while independently developing the CMS with guidance from senior team members.",
+    "software": [
+      "Strapi"
+    ],
+    "cover": "assets/projects/cit-website-redesign/thumbnail.webp",
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/projects/cit-website-redesign/cit-website-redesign-02.webp"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/cit-website-redesign/cit-website-redesign-03.webp"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/cit-website-redesign/cit-website-redesign-04.webp"
       }
     ],
     "artstationUrl": "https://puvaneshramr1.artstation.com/"
