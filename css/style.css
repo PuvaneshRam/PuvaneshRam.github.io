@@ -1307,6 +1307,7 @@ html[data-screen="detail"].fx-desktop,
 html[data-screen="detail"].fx-desktop * { cursor: auto !important; }
 html[data-screen="detail"] .cursor-star,
 html[data-screen="detail"] .cursor-frame { opacity: 0 !important; }
+html[data-screen="detail"] .fx-gravity { display: none; }
 
 /* desktop: sparkle trail behind the cursor */
 .fx-trail {

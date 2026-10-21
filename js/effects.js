@@ -293,7 +293,8 @@
         force.x = target.x * 0.15;
         force.y = target.y * 0.15;
       }
-      stepStars(stars, force, dt);
+      // like the fireflies, the stars stay off the project detail view so the artwork reads cleanly
+      if (screenName !== 'detail') stepStars(stars, force, dt);
 
       if (reducedMotion) return;
       const hx = `${(50 + current.x * 45).toFixed(1)}%`;
