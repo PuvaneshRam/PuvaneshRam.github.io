@@ -192,7 +192,7 @@ function openProjectDetail(slug) {
           <p class="detail-block-label">Software Used</p>
           <div class="tag-row">${project.software.map((s) => `<span class="tag-chip">${esc(s)}</span>`).join('')}</div>
         </div>` : ''}
-      <a class="btn btn-outline detail-link" href="${safeUrl(project.artstationUrl || 'https://puvaneshramr1.artstation.com/')}" target="_blank" rel="noopener noreferrer">VIEW ON ARTSTATION ↗</a>
+      ${project.artstationUrl || profileLink('artstation') ? `<a class="btn btn-outline detail-link" href="${safeUrl(project.artstationUrl || profileLink('artstation'))}" target="_blank" rel="noopener noreferrer">VIEW ON ARTSTATION ↗</a>` : ''}
     </div>`;
 
   renderGalleryGrid(gridEl, media, project.title, (index) => openLightbox(media, index, project.title));
@@ -261,6 +261,26 @@ function renderAbout() {
 
   const photo = el.querySelector('.about-photo img');
   photo.addEventListener('error', () => photo.classList.add('img-missing'));
+}
+
+// links from the Profile (edited in the admin), so every link on the site follows one source
+function profileLink(icon) {
+  return (PROFILE.links.find((l) => l.icon === icon) || {}).url || '';
+}
+
+function renderProfileLinks() {
+  const menu = document.getElementById('menu-links');
+  if (menu) {
+    menu.innerHTML = PROFILE.links
+      .map((l) => `<a href="${safeUrl(l.url)}" target="_blank" rel="noopener noreferrer">${esc(l.label)}</a>`)
+      .join('');
+  }
+  const cta = document.getElementById('work-artstation-cta');
+  const artstation = profileLink('artstation');
+  if (cta && /^https?:\/\//i.test(artstation)) {
+    cta.href = artstation;
+    cta.hidden = false;
+  }
 }
 
 function renderContact() {
@@ -432,6 +452,7 @@ renderGrid('work-grid', PERSONAL_WORK);
 renderGrid('projects-grid', PROJECT_ITEMS);
 renderAbout();
 renderContact();
+renderProfileLinks();
 initCardTilt();
 initMenuNav();
 initLightbox();
