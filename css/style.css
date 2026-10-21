@@ -547,9 +547,10 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   transition: transform 0.15s ease-out;
 }
 
+/* square, like ArtStation thumbnails — the admin's thumbnail crop frame uses the same 1:1 shape */
 .card-media {
   position: relative;
-  height: 320px;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
 }
 .card-media::before {

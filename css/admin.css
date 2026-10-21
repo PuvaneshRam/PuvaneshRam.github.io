@@ -619,3 +619,61 @@ body.locked .adm-drawer { display: none; }
 .thumb-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 .thumb-actions .hint { flex-basis: 100%; }
 @media (max-width: 860px) { .thumb-slot { grid-template-columns: 1fr; } .thumb-preview { max-width: 260px; } }
+
+/* ---------- crop dialog ---------- */
+.crop-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(0,0,0,0.75);
+}
+.crop-panel {
+  width: min(760px, 100%);
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px 22px;
+  background: var(--panel);
+  border-top: 3px solid var(--accent);
+  box-shadow: 0 24px 70px rgba(0,0,0,0.6);
+}
+.crop-head { display: flex; justify-content: space-between; align-items: center; }
+.crop-head h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.2rem; }
+.crop-stage {
+  position: relative;
+  height: min(62vh, 520px);
+  overflow: hidden;
+  background: #0b0b0b;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+.crop-stage.dragging { cursor: grabbing; }
+.crop-stage img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: none;
+  transform-origin: 0 0;
+  pointer-events: none;
+}
+/* everything outside the frame is dimmed, like ArtStation's cropper; thirds grid helps framing */
+.crop-frame {
+  position: absolute;
+  box-shadow: 0 0 0 9999px rgba(0,0,0,0.62);
+  outline: 2px solid var(--accent);
+  pointer-events: none;
+  background:
+    linear-gradient(to right, transparent calc(33.33% - 0.5px), rgba(255,255,255,0.35) calc(33.33% - 0.5px), rgba(255,255,255,0.35) calc(33.33% + 0.5px), transparent calc(33.33% + 0.5px), transparent calc(66.66% - 0.5px), rgba(255,255,255,0.35) calc(66.66% - 0.5px), rgba(255,255,255,0.35) calc(66.66% + 0.5px), transparent calc(66.66% + 0.5px)),
+    linear-gradient(to bottom, transparent calc(33.33% - 0.5px), rgba(255,255,255,0.35) calc(33.33% - 0.5px), rgba(255,255,255,0.35) calc(33.33% + 0.5px), transparent calc(33.33% + 0.5px), transparent calc(66.66% - 0.5px), rgba(255,255,255,0.35) calc(66.66% - 0.5px), rgba(255,255,255,0.35) calc(66.66% + 0.5px), transparent calc(66.66% + 0.5px));
+}
+.crop-controls { display: flex; align-items: center; gap: 12px; }
+.crop-controls span { font-size: 1.2rem; color: var(--muted); width: 14px; text-align: center; }
+.crop-controls input[type="range"] { flex: 1; padding: 0; border: none; background: none; accent-color: var(--accent); }
+.crop-foot { display: flex; justify-content: flex-end; gap: 10px; }
+.photo-slot .adm-btn { width: 100%; }
