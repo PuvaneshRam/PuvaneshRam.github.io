@@ -442,31 +442,6 @@ const PERSONAL_WORK = [
 // Projects screen
 const PROJECT_ITEMS = [
   {
-    "slug": "interior-design-02",
-    "title": "Interior Design 02",
-    "category": "Interior Render",
-    "cover": "assets/projects/interior-design-02/interior-design-02-01.webp",
-    "media": [
-      {
-        "type": "image",
-        "src": "assets/projects/interior-design-02/interior-design-02-01.webp"
-      },
-      {
-        "type": "image",
-        "src": "assets/projects/interior-design-02/interior-design-02-02.webp"
-      },
-      {
-        "type": "image",
-        "src": "assets/projects/interior-design-02/interior-design-02-03.webp"
-      },
-      {
-        "type": "image",
-        "src": "assets/projects/interior-design-02/interior-design-02-04.webp"
-      }
-    ],
-    "artstationUrl": "https://puvaneshramr1.artstation.com/"
-  },
-  {
     "slug": "interior-design",
     "title": "Interior Design",
     "category": "Interior Render / Blender",
@@ -542,6 +517,31 @@ const PROJECT_ITEMS = [
       {
         "type": "image",
         "src": "assets/projects/cit-website-redesign/cit-website-redesign-04.webp"
+      }
+    ],
+    "artstationUrl": "https://puvaneshramr1.artstation.com/"
+  },
+  {
+    "slug": "interior-design-02",
+    "title": "Interior Design 02",
+    "category": "Interior Render",
+    "cover": "assets/projects/interior-design-02/interior-design-02-01.webp",
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/projects/interior-design-02/interior-design-02-01.webp"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/interior-design-02/interior-design-02-02.webp"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/interior-design-02/interior-design-02-03.webp"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/interior-design-02/interior-design-02-04.webp"
       }
     ],
     "artstationUrl": "https://puvaneshramr1.artstation.com/"
