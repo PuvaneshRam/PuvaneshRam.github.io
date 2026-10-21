@@ -6,7 +6,7 @@
 const PROFILE = {
   "name": "Puvanesh Ram",
   "role": "3D Generalist",
-  "photo": "assets/profile/photo.jpg",
+  "photo": "assets/profile/photo.webp",
   "location": "Madurai, Tamil Nadu, India",
   "email": "puvaneshram.r@gmail.com",
   "cvPdf": "assets/cv/Puvanesh_Ram_CV.pdf",
