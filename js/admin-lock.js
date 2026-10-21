@@ -532,9 +532,32 @@ const ADMIN_VAULT = ${JSON.stringify(v)};
     if (running && lockEl.hidden && Date.now() - lastActive > IDLE_MS) lock();
   }, 30000);
 
+  // small secrets (e.g. the GitHub publishing token) kept in this browser's storage, encrypted with the
+  // vault's data key — readable only after unlocking, and they survive password changes
+  const SECRETS_KEY = 'adminSecrets';
+  async function readSecrets() {
+    if (!dataKey) throw new Error('The admin is locked.');
+    try {
+      const box = JSON.parse(localStorage.getItem(SECRETS_KEY));
+      return box ? JSON.parse(dec.decode(await aesDecrypt(dataKey, box))) : {};
+    } catch {
+      return {};
+    }
+  }
+  async function writeSecret(name, value) {
+    const all = await readSecrets();
+    if (value == null) delete all[name];
+    else all[name] = value;
+    localStorage.setItem(SECRETS_KEY, JSON.stringify(await aesEncrypt(dataKey, enc.encode(JSON.stringify(all)))));
+  }
+
   window.AdminLock = Object.freeze({
     folderConnected,
-    register(api) { app = api; }
+    register(api) { app = api; },
+    secrets: Object.freeze({
+      get: async (name) => (await readSecrets())[name] ?? null,
+      set: writeSecret
+    })
   });
 
   if (!window.crypto?.subtle) show('unsupported');

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- blob: lets the password-decrypted admin app run; nothing else outside this site may load -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' blob:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; connect-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' blob:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https://i.ytimg.com; media-src 'self' blob:; connect-src 'self' https://api.github.com; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex, nofollow">
 <title>Portfolio Admin</title>
@@ -26,7 +26,8 @@
     <a class="adm-btn ghost" href="index.html" target="_blank" rel="noopener">View site ↗</a>
     <button class="adm-btn ghost" id="adm-password" type="button">Password</button>
     <button class="adm-btn ghost" id="adm-lock-btn" type="button">Lock</button>
-    <button class="adm-btn primary" id="adm-save" type="button">Save</button>
+    <button class="adm-btn" id="adm-save" type="button">Save</button>
+    <button class="adm-btn primary" id="adm-publish" type="button" title="Put your saved changes on the live website">Publish ↑</button>
   </div>
 </header>
 

@@ -677,3 +677,48 @@ body.locked .adm-drawer { display: none; }
 .crop-controls input[type="range"] { flex: 1; padding: 0; border: none; background: none; accent-color: var(--accent); }
 .crop-foot { display: flex; justify-content: flex-end; gap: 10px; }
 .photo-slot .adm-btn { width: 100%; }
+
+/* ---------- generic dialog (publish, GitHub connect) ---------- */
+.adm-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(0,0,0,0.72);
+}
+.adm-modal-panel {
+  width: min(620px, 100%);
+  max-height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px 26px;
+  background: var(--panel);
+  border-top: 3px solid var(--accent);
+  box-shadow: 0 24px 70px rgba(0,0,0,0.6);
+}
+.adm-modal-panel h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.3rem; }
+.adm-modal-panel .steps { margin: 0 0 0 20px; }
+.adm-modal-panel .steps li { line-height: 1.5; }
+.adm-modal-foot { display: flex; justify-content: flex-end; align-items: center; gap: 10px; margin-top: 4px; }
+.pub-disconnect { margin-right: auto; color: var(--muted); }
+.pub-status { font-size: 0.95rem; }
+.pub-status .ok, .pub-live .ok { color: var(--accent); }
+.pub-status .err { color: var(--danger); }
+.pub-list { list-style: none; max-height: 260px; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; font-size: 0.82rem; }
+.pub-list li { display: flex; align-items: center; gap: 10px; overflow-wrap: anywhere; }
+.pub-tag {
+  flex: none;
+  padding: 1px 6px;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  background: rgba(255,255,255,0.12);
+}
+.pub-tag.new { background: var(--accent); color: var(--ink); }
+.pub-live a { color: var(--accent); }
