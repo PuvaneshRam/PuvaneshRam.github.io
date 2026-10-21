@@ -24,7 +24,7 @@ const PROFILE = {
     {
       "label": "Portfolio",
       "icon": "web",
-      "url": "https://puvaneshram007.wixsite.com/my-portfolio-site"
+      "url": "https://puvaneshram.github.io/"
     }
   ],
   "summary": [
