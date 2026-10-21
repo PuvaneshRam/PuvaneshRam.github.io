@@ -268,10 +268,13 @@ function profileLink(icon) {
   return (PROFILE.links.find((l) => l.icon === icon) || {}).url || '';
 }
 
+// links ticked "Show on Contact page & main menu" in the admin (all others stay on the CV only)
+const siteLinks = () => PROFILE.links.filter((l) => !l.hideOnSite);
+
 function renderProfileLinks() {
   const menu = document.getElementById('menu-links');
   if (menu) {
-    menu.innerHTML = PROFILE.links
+    menu.innerHTML = siteLinks()
       .map((l) => `<a href="${safeUrl(l.url)}" target="_blank" rel="noopener noreferrer">${esc(l.label)}</a>`)
       .join('');
   }
@@ -295,7 +298,7 @@ function renderContact() {
     <p class="contact-location">Based in ${esc(p.location)}</p>
     <div class="footer-links">
       <a href="${safeUrl(`mailto:${p.email}`)}">Email</a>
-      ${p.links.map((l) => `<a href="${safeUrl(l.url)}" target="_blank" rel="noopener noreferrer">${esc(l.label)}</a>`).join('')}
+      ${siteLinks().map((l) => `<a href="${safeUrl(l.url)}" target="_blank" rel="noopener noreferrer">${esc(l.label)}</a>`).join('')}
     </div>
 
     <div class="recruiter-card">

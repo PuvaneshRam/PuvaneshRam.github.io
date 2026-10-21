@@ -24,7 +24,8 @@ const PROFILE = {
     {
       "label": "Portfolio",
       "icon": "web",
-      "url": "https://puvaneshram.github.io/"
+      "url": "https://puvaneshram.github.io/",
+      "hideOnSite": true
     }
   ],
   "summary": [
